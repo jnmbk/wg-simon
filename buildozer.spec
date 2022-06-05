@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = Boilerplate for a Weekend Game
+title = Simon
 
 # (str) Package name
-package.name = boilerplate
+package.name = simon
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.wg
