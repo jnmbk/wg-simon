@@ -17,7 +17,11 @@ class Game(App):
         colors = ("yellow", "blue", "red", "green")
         buttons = []
         for i, color in enumerate(colors):
-            button = Button(background_color=color)
+            button = Button(
+                background_color=color,
+                background_normal="",
+                background_disabled_normal="",
+            )
             button.number = i
             self.root.ids.grid.add_widget(button)
             buttons.append(button)
