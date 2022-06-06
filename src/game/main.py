@@ -29,15 +29,15 @@ class Game(App):
             buttons.append(button)
 
         def set_button(button_id, _):
-            Logger.info(f"GUI: flashing {buttons[button_id].number}")
+            Logger.debug(f"GUI: flashing {buttons[button_id].number}")
             buttons[button_id].background_color = "white"
 
         def unset_button(button_id, _):
-            Logger.info(f"GUI: flashed {buttons[button_id].number}")
+            Logger.debug(f"GUI: flashed {buttons[button_id].number}")
             buttons[button_id].background_color = colors[button_id]
 
         def flash_buttons():
-            Logger.info(f"Controller: sequence is {self.controller.sequence}")
+            Logger.debug(f"Controller: sequence is {self.controller.sequence}")
 
             for button in buttons:
                 button.disabled = True
@@ -63,7 +63,7 @@ class Game(App):
         for i, button in enumerate(buttons):
 
             def move(button):
-                Logger.info(f"GUI: making move on {button.number}")
+                Logger.debug(f"GUI: making move on {button.number}")
                 self.controller.play(button.number)
                 if self.controller.game_is_over:
                     self.root.ids.game_over_widget.opacity = 1
