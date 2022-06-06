@@ -7,6 +7,8 @@ from kivy.uix.button import Button
 
 from .controller import Controller
 
+FLASH_TIME = 2
+
 
 class Game(App):
     def build(self):
@@ -42,16 +44,21 @@ class Game(App):
 
             for i, button_id in enumerate(self.controller.sequence):
 
-                Clock.schedule_once(functools.partial(set_button, button_id), i * 3)
                 Clock.schedule_once(
-                    functools.partial(unset_button, button_id), i * 3 + 1
+                    functools.partial(set_button, button_id), i * FLASH_TIME
+                )
+                Clock.schedule_once(
+                    functools.partial(unset_button, button_id),
+                    (i + 0.4) * FLASH_TIME,
                 )
 
             def enable_buttons(_):
                 for button in buttons:
                     button.disabled = False
 
-            Clock.schedule_once(enable_buttons, 3 * len(self.controller.sequence))
+            Clock.schedule_once(
+                enable_buttons, FLASH_TIME * len(self.controller.sequence)
+            )
 
         for i, button in enumerate(buttons):
 
