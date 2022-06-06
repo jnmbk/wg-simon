@@ -24,11 +24,11 @@ class Game(App):
 
         def set_button(button_id, _):
             Logger.info(f"GUI: flashing {buttons[button_id].number}")
-            buttons[button_id].text = "X"
+            buttons[button_id].background_color = "white"
 
         def unset_button(button_id, _):
             Logger.info(f"GUI: flashed {buttons[button_id].number}")
-            buttons[button_id].text = ""
+            buttons[button_id].background_color = colors[button_id]
 
         def flash_buttons():
             Logger.info(f"Controller: sequence is {self.controller.sequence}")
