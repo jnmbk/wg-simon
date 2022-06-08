@@ -10,7 +10,7 @@ Goal is to keep my software design & development skills up to date.
 
 ## Setting Up
     git clone git@github.com:jnmbk/wg-simon.git
-    cd wg-boilerplate
+    cd wg-simon
     pip install -e .
 
 ## Running
